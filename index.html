@@ -43,15 +43,14 @@
   img { width: 40px; height: 40px; border-radius: 100%; pointer-events: none; }
   .span {
     width: 12px; height: 12px; background: #fff; border-radius: 100%; display: flex; justify-content: center; text-align: center; margin-top: 7.9px; animation: typing 0.8s ease-in-out infinite; }
-  
   .span:nth-child(1) { animation-delay: 0s;   }
-.span:nth-child(2) { animation-delay: 0.15s; }
-.span:nth-child(3) { animation-delay: 0.30s; }
+  .span:nth-child(2) { animation-delay: 0.15s; }
+  .span:nth-child(3) { animation-delay: 0.30s; }
   @keyframes typing {
-  0%   { transform: translateY(0); opacity: 1; }
-  50%  { transform: translateY(-6px); opacity: 0.5; }
-  100% { transform: translateY(0); opacity: 1; }
-}
+    0%   { transform: translateY(0); opacity: 1; }
+    50%  { transform: translateY(-6px); opacity: 0.5; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
   .tombol {
     cursor: pointer;
     border: none;
@@ -123,12 +122,14 @@
     input.value = "";
     
     let response = "Maaf, saya tidak mengerti maksud Anda.";
-    if (user.includes("halo")) {
+    if (user.includes("halo") | user.includes("hai")) {
       response = "Halo!";
     } else if (user.includes("apa kabar")) {
       response = "Saya baik-baik saja! Terima kasih.";
     } else if (user.includes("siapa kamu")) {
       response = "Saya adalah AI sederhana yang dibuat oleh Rendi Marzikri.";
+    } else if (user.includes("siapa namamu")) {
+      response = "Namaku adalah OtonoseRaco, panggil saja Raco.";
     }
     Chat.innerHTML += `<div style="text-align: right; padding: 10px; margin-bottom: 30px"><span class="user">${user}</span></div>`;
     Chat.innerHTML += `<div id="typing"><div style="display: flex"><img src="raco.jpg"><span class="ai"><span style="display: flex"><span class="span"></span><span class="span" style="margin-left: 6px"></span><span class="span" style="margin-left: 6px"</span></span></div></div>`;
