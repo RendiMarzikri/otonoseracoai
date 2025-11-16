@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="initial-scale=1.0">
+  <meta name="description" content="OtonoseRaco- AI (ChatBot) sederhana yang dibuat oleh Rendi Marzikri, dengan bahasa pemrograman HTML dan Javascript!">
+  <title>OtonoseRaco - AI</title>
   <style>
   body {
     background: #000;
@@ -125,6 +127,8 @@
       response = "Halo!";
     } else if (user.includes("apa kabar")) {
       response = "Saya baik-baik saja! Terima kasih.";
+    } else if (user.includes("siapa kamu")) {
+      response = "Saya adalah AI sederhana yang dibuat oleh Rendi Marzikri.";
     }
     Chat.innerHTML += `<div style="text-align: right; padding: 10px; margin-bottom: 30px"><span class="user">${user}</span></div>`;
     Chat.innerHTML += `<div id="typing"><div style="display: flex"><img src="raco.jpg"><span class="ai"><span style="display: flex"><span class="span"></span><span class="span" style="margin-left: 6px"></span><span class="span" style="margin-left: 6px"</span></span></div></div>`;
