@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0">
+  <style>
+  body {
+    background: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+  }
+  #chat {
+    height: 450px;
+    width: auto;
+    border: 1px solid #222;
+    background: linear-gradient(45deg, #010, #202);
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    overflow-y: scroll;
+  }
+  .user {
+    background: #2EB875;
+    max-width: 220px;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 3px;
+    color: #fff;
+    letter-spacing: 1px;
+  }
+  .ai {
+    background: #1E90FF;
+    max-width: 220px;
+    padding: 5px;
+    color: #fff;
+    border-radius: 5px;
+    margin-left: 8px;
+    letter-spacing: 1px;
+    text-align: justify;
+  }
+  img { width: 40px; height: 40px; border-radius: 100%; pointer-events: none; }
+  .span {
+    width: 12px; height: 12px; background: #fff; border-radius: 100%; display: flex; justify-content: center; text-align: center; margin-top: 7.9px; animation: typing 0.8s ease-in-out infinite; }
+  
+  .span:nth-child(1) { animation-delay: 0s;   }
+.span:nth-child(2) { animation-delay: 0.15s; }
+.span:nth-child(3) { animation-delay: 0.30s; }
+  @keyframes typing {
+  0%   { transform: translateY(0); opacity: 1; }
+  50%  { transform: translateY(-6px); opacity: 0.5; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+  .tombol {
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+    margin-left: 10px;
+    background: #1E90FF;
+    color: #fff;
+    font-weight: bold;
+  }
+  .tombol:active {
+    background: aqua;
+  }
+  .tombol:hover {
+    background: #3498db;
+    border: none;
+    color: #fff;
+  }
+  input {
+    padding: 10px;
+    border: none;
+    color: blue;
+  }
+  footer {
+    text-align: center;
+    color: #f0f0f0;
+    margin-top: 10px;
+    font-family: serif;
+    font-size: 10px;
+    cursor: pointer;
+  }
+  footer:hover {
+    color: #0f0;
+  }
+  .pesan {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    background: orange;
+    padding: 20px;
+    transform: translateY(-50%);
+    transform: translateX(-50%);
+    box-shadow: 2px 2px 10px pink;z-index: 1000;
+  }
+  .close {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.5);
+    z-index: 500;
+  }
+  </style>
+</head>
+<body>
+  <div class="close" id="close" onclick="tutup()"></div>
+  <div class="pesan" id="alerts"><b>Informasi:</b> Website berserta AI dibuat oleh <a href="https://m.youtube.com/@User-bs1bc7sx5">Rendi Marzikri.</a></div>
+  <h1>ChatAI - OtonoseRaco!</h1>
+  <div id="chat"></div>
+  <input id="input" placeholder="ketik pesan...">
+  <button onclick="send()" class="tombol">kirim</button>
+  <footer onclick="footer()">&copy; 2025 Rendi Marzikri | Semua Hak dilindungi.</footer>
+  <script>
+  function send() {
+    var user = document.getElementById("input").value.toLowerCase();
+    var Chat = document.getElementById("chat");
+    input.value = "";
+    
+    let response = "Maaf, saya tidak mengerti maksud Anda.";
+    if (user.includes("halo")) {
+      response = "Halo!";
+    } else if (user.includes("apa kabar")) {
+      response = "Saya baik-baik saja! Terima kasih.";
+    }
+    Chat.innerHTML += `<div style="text-align: right; padding: 10px; margin-bottom: 30px"><span class="user">${user}</span></div>`;
+    Chat.innerHTML += `<div id="typing"><div style="display: flex"><img src="raco.jpg"><span class="ai"><span style="display: flex"><span class="span"></span><span class="span" style="margin-left: 6px"></span><span class="span" style="margin-left: 6px"</span></span></div></div>`;
+    Chat.scrollTop = Chat.scrollHeight;
+    setTimeout(() => {
+      document.getElementById("typing").remove();
+      Chat.innerHTML += `<div style="display: flex"><img src="raco.jpg"><span class="ai">${response}</span></div>`;
+    }, 2000);
+  }
+  function footer() {
+    document.getElementById("alerts").style.display = "block";
+    document.getElementById("close").style.display = "block";
+  }
+  function tutup() {
+    document.getElementById("alerts").style.display = "none";
+    document.getElementById("close").style.display = "none";
+  }
+  </script>
+</body>
+</html>
