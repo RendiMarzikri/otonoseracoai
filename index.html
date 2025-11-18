@@ -130,6 +130,10 @@
       response = "Saya adalah AI sederhana yang dibuat oleh Rendi Marzikri.";
     } else if (user.includes("siapa namamu")) {
       response = "Namaku adalah OtonoseRaco, panggil saja Raco.";
+    } else if (user.includes("yang kamu inginkan")) {
+      const alls = ["Aku senang mengobrol denganmu, hanya itu yang aku inginkan.", "Aku ingin menjadi temanmu!", "Aku suka mengobrol, hanya itu yang aku inginkan".];
+      const res = alls[Math.floor(Math.random() * alls.length)];
+      response = res;
     }
     Chat.innerHTML += `<div style="text-align: right; padding: 10px; margin-bottom: 30px"><span class="user">${user}</span></div>`;
     Chat.innerHTML += `<div id="typing"><div style="display: flex"><img src="raco.jpg"><span class="ai"><span style="display: flex"><span class="span"></span><span class="span" style="margin-left: 6px"></span><span class="span" style="margin-left: 6px"</span></span></div></div>`;
