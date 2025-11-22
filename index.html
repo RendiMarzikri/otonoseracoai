@@ -134,6 +134,12 @@
       const alls = ["Aku senang mengobrol denganmu, hanya itu yang aku inginkan.", "Aku ingin menjadi temanmu!", "Aku suka mengobrol, hanya itu yang aku inginkan."];
       const res = alls[Math.floor(Math.random() * alls.length)];
       response = res;
+    } else if (user.includes("yang bisa kamu lakukan")) {
+      const alls = ["Aku bisa menjawab pertanyaan/membalas pesan kamu.", "Aku bisa membalas pesanmu atau bisa mengobrol santai!", "Aku hanya AI sederhana, tapi aku juga bisa mengobrol dengan bahasa sederhana!"];
+      const res = alls[Math.floor(Math.random() * alls.length)];
+      response = res;
+    } else if (user.includes("yang kamu suka")) {
+      response = "Aku suka membalas/menanggapi pesan dari pengguna!";
     }
     Chat.innerHTML += `<div style="text-align: right; padding: 10px; margin-bottom: 30px"><span class="user">${user}</span></div>`;
     Chat.innerHTML += `<div id="typing"><div style="display: flex"><img src="raco.jpg"><span class="ai"><span style="display: flex"><span class="span"></span><span class="span" style="margin-left: 6px"></span><span class="span" style="margin-left: 6px"</span></span></div></div>`;
