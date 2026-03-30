@@ -3,8 +3,8 @@
 <head>
   <meta name="google-site-verification" content="rJLDw8fxi5920s9ams4FNIfJOxyINC3YsBrpRSAncJM" />
   <meta charset="UTF-8">
-  <link rel="icon" sizes="32x32" href="https://opengraph.b-cdn.net/production/images/bb4aeb5b-5484-452f-a7ca-b45421be7731.jpg?token=m-whRbnHxjPusSE4pJLZ87uAObArNdOLdFenIoUxaQw&height=349&width=349&expires=33300028638">
-  <link rel="icon" sizes="60x60" href="https://opengraph.b-cdn.net/production/images/bb4aeb5b-5484-452f-a7ca-b45421be7731.jpg?token=m-whRbnHxjPusSE4pJLZ87uAObArNdOLdFenIoUxaQw&height=349&width=349&expires=33300028638">
+  <link rel="icon" href="https://opengraph.b-cdn.net/production/images/bb4aeb5b-5484-452f-a7ca-b45421be7731.jpg?token=m-whRbnHxjPusSE4pJLZ87uAObArNdOLdFenIoUxaQw&height=349&width=349&expires=33300028638">
+  <link rel="icon" href="https://opengraph.b-cdn.net/production/images/bb4aeb5b-5484-452f-a7ca-b45421be7731.jpg?token=m-whRbnHxjPusSE4pJLZ87uAObArNdOLdFenIoUxaQw&height=349&width=349&expires=33300028638">
   <meta name="viewport" content="initial-scale=1.0">
   <title>OtonoseRaco - AI</title>
   <meta name="description" content="Otonose Raco versi AI yang dibuat oleh Rendi Marzikri menggunakan logika sederhana HTML dan javascript, agar dapat dihosting melalui Github pages sekaligus mudah ditiru dan dibuat.">
@@ -130,6 +130,7 @@
   <button onclick="send()" class="tombol">kirim</button>
   <footer onclick="footer()">&copy; 2025 Rendi Marzikri | Semua Hak dilindungi.</footer>
   <script>
+  let nameuser = "";
   function send() {
     var user = document.getElementById("input").value.toLowerCase();
     var Chat = document.getElementById("chat");
@@ -154,6 +155,11 @@
       response = res;
     } else if (user.includes("yang kamu suka")) {
       response = "Aku suka membalas/menanggapi pesan dari pengguna!";
+    } else if (user.includes("siapa nama saya") | user.includes("siapa namaku")) {
+      nameuser ? response = `Namamu adalah ${nameuser}.` : response = "Aku belum tahu namamu.";
+    } else if (user.includes("namaku")) {
+      const match = user.match(/namaku (.+)/);
+      if (match) { const x = match[1]; response = "Halo " + x "!"; nameuser = x; } else { response = "Halo!"; }
     }
     Chat.innerHTML += `<div style="text-align: right; padding: 10px; margin-bottom: 30px"><span class="user">${user}</span></div>`;
     Chat.innerHTML += `<div id="typing"><div style="display: flex"><img src="raco.jpg"><span class="ai"><span style="display: flex"><span class="span"></span><span class="span" style="margin-left: 6px"></span><span class="span" style="margin-left: 6px"</span></span></div></div>`;
