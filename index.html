@@ -160,6 +160,15 @@
     } else if (user.includes("namaku")) {
       const match = user.match(/namaku (.+)/);
       if (match) { const x = match[1]; response = "Halo " + x + "!"; nameuser = x; } else { response = "Halo!"; }
+    } else if (user.includes("nama saya")) {
+      const match = user.match(/nama saya (.+)/);
+      if (match) { const x = match[1]; response = "Halo " + x + "!"; namauser = x; } else { response = "Halo!"; }
+    } else if (user.includes("aku suka")) {
+      const match = user.match(/aku suka (.+)/);
+      if (match) {
+        const x = match[1];
+        response = "Aku juga suka " + x + ".";
+      } else { response = "Aku juga."; }
     }
     Chat.innerHTML += `<div style="text-align: right; padding: 10px; margin-bottom: 30px"><span class="user">${user}</span></div>`;
     Chat.innerHTML += `<div id="typing"><div style="display: flex"><img src="raco.jpg"><span class="ai"><span style="display: flex"><span class="span"></span><span class="span" style="margin-left: 6px"></span><span class="span" style="margin-left: 6px"</span></span></div></div>`;
