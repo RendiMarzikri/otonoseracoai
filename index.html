@@ -171,7 +171,11 @@
       } else { response = "Aku juga."; }
     } else if (user.includes("yang kamu pelajari hari ini")) {
       const alls = ["Hari ini aku tidak belajar apapun. Bagaimana denganmu?", "Hari ini aku tidak mempelajari apapun, kalau kamu?", "Aku hanya ChatBot rule-based yang tidak bisa belajar."];
-      const res = alls[Math.floor(Math.random * alls.length)];
+      const res = alls[Math.floor(Math.random() * alls.length)];
+      response = res;
+    } else if (user.includes("yang kamu pelajari")) {
+      const alls = ["Aku tidak belajar apapun. Bagaimana denganmu?", "Aku tidak bisa belajar, aku hanya merespon dengan yang di tentukan.", "Aku tidak belajar seperti manusia, aku hanya ChatBot sederhana (Rule-based)."];
+      const res = alls[Math.floor(Math.random() * alls.length)];
       response = res;
     }
     Chat.innerHTML += `<div style="text-align: right; padding: 10px; margin-bottom: 30px"><span class="user">${user}</span></div>`;
