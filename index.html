@@ -169,6 +169,10 @@
         const x = match[1];
         response = "Aku juga suka " + x + ".";
       } else { response = "Aku juga."; }
+    } else if (user.includes("yang kamu pelajari hari ini")) {
+      const alls = ["Hari ini aku tidak belajar apapun. Bagaimana denganmu?", "Hari ini aku tidak mempelajari apapun, kalau kamu?", "Aku hanya ChatBot rule-based yang tidak bisa belajar."];
+      const res = alls[Math.floor(Math.random * alls.length)];
+      response = res;
     }
     Chat.innerHTML += `<div style="text-align: right; padding: 10px; margin-bottom: 30px"><span class="user">${user}</span></div>`;
     Chat.innerHTML += `<div id="typing"><div style="display: flex"><img src="raco.jpg"><span class="ai"><span style="display: flex"><span class="span"></span><span class="span" style="margin-left: 6px"></span><span class="span" style="margin-left: 6px"</span></span></div></div>`;
