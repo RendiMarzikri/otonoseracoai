@@ -174,7 +174,11 @@
       const res = alls[Math.floor(Math.random() * alls.length)];
       response = res;
     } else if (user.includes("yang kamu pelajari")) {
-      const alls = ["Aku tidak belajar apapun. Bagaimana denganmu?", "Aku tidak bisa belajar, aku hanya merespon dengan yang di tentukan.", "Aku tidak belajar seperti manusia, aku hanya ChatBot sederhana (Rule-based)."];
+      const alls = ["Aku tidak belajar apapun. Bagaimana denganmu?", "Aku tidak bisa belajar, aku hanya merespon berdasarkan respon yang sudah di tentukan.", "Aku tidak belajar seperti manusia, aku hanya ChatBot sederhana (Rule-based)."]
+      const res = alls[Math.floor(Math.random() * alls.length)];
+      response = res;
+    } else if (user.includes("aku sedih")) {
+      const alls = ["Semangat yaa, besok bisa lebih baik~", "Semangat terus, besok bisa lebih baik~", "Aku paham perasaanmu. Semangat yaa (⁠≧⁠▽⁠≦⁠)"];
       const res = alls[Math.floor(Math.random() * alls.length)];
       response = res;
     }
